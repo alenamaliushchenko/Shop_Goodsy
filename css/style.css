@@ -1,0 +1,288 @@
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 56px;
+    padding: 0 16px;
+    position: relative;
+}
+.logo {
+    width: 100px;
+    max-height: 44px;
+    object-fit: contain;
+    margin-right: 16px;
+}
+.user-icon {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+.menu-checkbox {
+    display: none;
+}
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    z-index: 200;
+    background: none;
+    border: none;
+    transition: background 0.2s;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.logo {
+    width: 100px;
+    max-height: 44px;
+    object-fit: contain;
+}
+.user-icon {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.user-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+.menu-checkbox {
+    display: none;
+}
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    z-index: 200;
+    background: none;
+    border: none;
+    transition: background 0.2s;
+}
+.menu-icon:hover {
+    background: #eaf6fd;
+    border-radius: 8px;
+}
+.menu-checkbox-line {
+  width: 28px;
+  height: 3px;
+  background: #3498db;
+  border-radius: 2px;
+  margin: 0;
+  margin-bottom: 6px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.menu-checkbox-line:last-child {
+  margin-bottom: 0;
+}
+.menu-checkbox:checked + .menu-icon .menu-checkbox-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.menu-checkbox:checked + .menu-icon .menu-checkbox-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-checkbox:checked + .menu-icon .menu-checkbox-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+.mobile-menu-content {
+ display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 56px);
+  background: #fff;
+  overflow-y: auto;
+  z-index: 100;
+  padding: 16px;
+}
+.menu-checkbox:checked ~ .mobile-menu-content {
+  display: block;
+}
+.mobile-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 25px;
+    margin: 0 auto;
+}
+.mobile-menu-list > li {
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.mobile-menu-list a,
+.mobile-menu-list .toggle-btn {
+  display: inline-block;
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  text-align: center;
+  border-radius: 8px;
+}
+.mobile-menu-list a:hover,
+.mobile-menu-list .toggle-btn:hover {
+  color: #3498db;
+  background: #eaf6fd;
+}
+.mobile-menu-list .toggle-btn {
+  position: relative;
+  padding-right: 28px;
+}
+.mobile-menu-list .toggle-btn::after {
+  content: '▸';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1em;
+  color: #3498db;
+  transition: transform 0.2s;
+}
+.mobile-menu-list .toggle-btn.active::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+.subcategory-list,
+.contact-info {
+  padding: 0 0 0 0;
+  margin: 0;
+  display: none;
+}
+.subcategory-list.visible,
+.contact-info.visible {
+  display: block;
+}
+.subcategory-list li {
+  margin: 0.5rem 0;
+}
+.subcategory-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.subcategory-list li {
+  margin: 6px 0;
+}
+.subcategory-list a {
+  font-size: 1rem;
+  color: #555;
+}
+.subcategory-list a:hover {
+  color: #3498db;
+}
+.contact-info {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.fortune-entry {
+  text-align: center;
+  margin: 30px 0;
+}
+.fortune-entry button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.fortune-entry button:hover {
+  background-color: #217bb7;
+}
+
+/* Модальне вікно */
+.fortune-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.hidden {
+  display: none;
+}
+
+.fortune-content {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  position: relative;
+}
+
+/* Стилі колеса */
+.wheel {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  border: 8px solid #ccc;
+  overflow: hidden;
+  transform: rotate(0deg);
+}
+.segment {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+}
+.segment span {
+  position: absolute;
+  left: 100%;
+  transform: rotate(var(--text-angle));
+  transform-origin: left center;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+/* Кнопки */
+#spin {
+  padding: 10px 18px;
+  font-size: 1rem;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#spin:hover {
+  background-color: #27ae60;
+}
+.close-btn {
+  margin-top: 12px;
+  background: none;
+  color: #999;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #555;
+}

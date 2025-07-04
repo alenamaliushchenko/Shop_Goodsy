@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "name": "Помідори",
+    "price": 35,
+    "category": "Овочі",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/1134013200/photo/close-up-of-fresh-ripe-tomatoes-as-food-vegetables-agriculture-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=LpnvV-m-SFqKhsEbTOMPnPSqmz3dxQiv7xlhimV8laE="
+  },
+  {
+    "id": 2,
+    "name": "Огірки",
+    "price": 30,
+    "category": "Овочі",
+    "unit": "кг",
+    "image": "https://images.unsplash.com/photo-1568584711271-6c929fb49b60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGN1Y3VtYmVyfGVufDB8fDB8fHww"
+  },
+  {
+    "id": 3,
+    "name": "Капуста",
+    "price": 25,
+    "category": "Овочі",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/183326451/photo/savoy-cabbage.webp?a=1&b=1&s=612x612&w=0&k=20&c=WkjUG3bbVLLye5JvkUw7ADNTn_duvFWdqORxr9Mmzso="
+  },
+  {
+    "id": 4,
+    "name": "Морква",
+    "price": 20,
+    "category": "Овочі",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/831170154/photo/bundle-fresh-carrots-isolated.webp?a=1&b=1&s=612x612&w=0&k=20&c=pOw75mV-XqC8SN4lDmd_scMaZw--G8WQ7EoswcKc4n4="
+  },
+  {
+    "id": 5,
+    "name": "Цибуля",
+    "price": 15,
+    "category": "Овочі",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/503324916/photo/onions.webp?a=1&b=1&s=612x612&w=0&k=20&c=pEuQCYE5v7Jv0iZL9t_n4A-vwd0PgFXEqgQwlDIoTAc="
+  },
+
+  {
+    "id": 6,
+    "name": "Яблука",
+    "price": 28,
+    "category": "Фрукти",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/1849310621/photo/osch%C3%B6nheit-perfektion-ne-apple-a-day.webp?a=1&b=1&s=612x612&w=0&k=20&c=qQIIA7R1GjGZbGb2jMpg3nZAxwdKvrI3g6-6yomQAjA="
+  },
+  {
+    "id": 7,
+    "name": "Банани",
+    "price": 40,
+    "category": "Фрукти",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/162487071/photo/banana-bunch.webp?a=1&b=1&s=612x612&w=0&k=20&c=NbLzAPpCTnvJSgBcphUg-WLgpxjLzF20dOXY7iEAPLo="
+  },
+  {
+    "id": 8,
+    "name": "Груші",
+    "price": 30,
+    "category": "Фрукти",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/1391893617/photo/pear-fruit-on-white.webp?a=1&b=1&s=612x612&w=0&k=20&c=b7wKhZWB4HLz5BqvTevno8szDCeM6DIe9davLgx7Jas="
+  },
+  {
+    "id": 9,
+    "name": "Виноград",
+    "price": 50,
+    "category": "Фрукти",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/697403452/photo/grape-on-the-white-background-fresh-berry.webp?a=1&b=1&s=612x612&w=0&k=20&c=571A3HbPGvWHOHPJhXU_6_VXhHGKHbp4z1vGH_x7ZB8="
+  },
+  {
+    "id": 10,
+    "name": "Апельсини",
+    "price": 45,
+    "category": "Фрукти",
+    "unit": "кг",
+    "image": "https://media.istockphoto.com/id/2124102567/photo/orange-fruit-with-leaf.webp?a=1&b=1&s=612x612&w=0&k=20&c=YUa-SHN1YnyS7wYTx33M59e-FJUUmiFNcWMNO2o4ats="
+  },
+
+  {
+    "id": 11,
+    "name": "Молоко",
+    "price": 42,
+    "category": "Молочні",
+    "unit": "л",
+    "image": "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fE1pbGt8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "id": 12,
+    "name": "Йогурт",
+    "price": 25,
+    "category": "Молочні",
+    "unit": "шт",
+    "image": "https://images.unsplash.com/photo-1604095853918-1a1823a63dd5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8WW9ndXJ0fGVufDB8fDB8fHww"
+  },
+  {
+    "id": 13,
+    "name": "Сир",
+    "price": 85,
+    "category": "Молочні",
+    "unit": "кг",
+    "image": "https://plus.unsplash.com/premium_photo-1691939610797-aba18030c15f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hlZXNlfGVufDB8fDB8fHww"
+  },
+  {
+    "id": 14,
+    "name": "Вершкове масло",
+    "price": 110,
+    "category": "Молочні",
+    "unit": "шт",
+    "image": "https://plus.unsplash.com/premium_photo-1700088853545-e6529edb2d25?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEJ1dHRlcnxlbnwwfHwwfHx8MA%3D%3D"
+  },
+  {
+    "id": 15,
+    "name": "Кефір",
+    "price": 38,
+    "category": "Молочні",
+    "unit": "л",
+    "image": "https://media.istockphoto.com/id/2198027890/photo/natural-fermented-milk-product-kefir.webp?a=1&b=1&s=612x612&w=0&k=20&c=TSDawzl4gwpg_wcIMuLCEXYL8ayhmIERO1gHw8vJ8a4="
+  },
+
+  {
+    "id": 16,
+    "name": "Апельсиновий сік",
+    "price": 55,
+    "category": "Напої",
+    "unit": "л",
+    "image": "https://media.istockphoto.com/id/2174355038/photo/close-up-of-orange-juice-on-table.webp?a=1&b=1&s=612x612&w=0&k=20&c=MS7j8WAJGM8l_898ViWi2r1lhYcS-X-Aeh7-tSK7Dcc="
+  },
+  {
+    "id": 17,
+    "name": "Мінеральна вода",
+    "price": 20,
+    "category": "Напої",
+    "unit": "л",
+    "image": "https://images.unsplash.com/photo-1560847468-5eef330f455a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TWluZXJhbCUyMHdhdGVyfGVufDB8fDB8fHww"
+  },
+  {
+    "id": 18,
+    "name": "Чай зелений",
+    "price": 75,
+    "category": "Напої",
+    "unit": "шт",
+    "image": "https://media.istockphoto.com/id/1160359568/photo/lipton-weight-loss-japanese-pyramid-lemon-organic-used-kirkland-tropical-acai-pure.webp?a=1&b=1&s=612x612&w=0&k=20&c=WXk0hC0y-U-jNyfiVfwhwvDEaZ44ZqMqaKZ6hBGdii8="
+  },
+  {
+    "id": 19,
+    "name": "Кава мелена",
+    "price": 150,
+    "category": "Напої",
+    "unit": "кг",
+    "image": "https://images.unsplash.com/photo-1659693314597-e62f37adccf8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8R3JvdW5kJTIwY29mZmVlJTIwcGFja2FnaW5nfGVufDB8fDB8fHww"
+  },
+  {
+    "id": 20,
+    "name": "Сік яблучний",
+    "price": 45,
+    "category": "Напої",
+    "unit": "л",
+    "image": "https://media.istockphoto.com/id/1323857956/photo/drinking-glass-full-of-apple-juice-isolated-on-white.webp?a=1&b=1&s=612x612&w=0&k=20&c=tjT7OlTChSSoBRg2ule8t13s64UOtnh60jbo9dKBXts="
+  },
+
+  {
+    "id": 21,
+    "name": "Миючий засіб",
+    "price": 65,
+    "category": "Хімія",
+    "unit": "шт",
+    "image": "https://plus.unsplash.com/premium_photo-1664372899356-3d9dc566fba2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RGV0ZXJnZW50fGVufDB8fDB8fHww"
+  },
+  {
+    "id": 22,
+    "name": "Пральний порошок",
+    "price": 120,
+    "category": "Хімія",
+    "unit": "шт",
+    "image": "https://images.unsplash.com/photo-1624372635310-01d078c05dd9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RGV0ZXJnZW50fGVufDB8fDB8fHww"
+  },
+  {
+    "id": 23,
+    "name": "Засіб для миття посуду",
+    "price": 40,
+    "category": "Хімія",
+    "unit": "шт",
+    "image": "https://media.istockphoto.com/id/2153054943/photo/a-red-cleaning-sponge-with-heart-shaped-foam.webp?a=1&b=1&s=612x612&w=0&k=20&c=6a3OvWob9XiT-xY9TZGxtNCSluKI0OWiyvmTB5LqnJI="
+  },
+  {
+    "id": 24,
+    "name": "Відбілювач",
+    "price": 55,
+    "category": "Хімія",
+    "unit": "шт",
+    "image": "https://images.unsplash.com/photo-1584813470613-5b1c1cad3d69?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QmxlYWNofGVufDB8fDB8fHwwh"
+  },
+  {
+    "id": 25,
+    "name": "Освіжувач повітря",
+    "price": 70,
+    "category": "Хімія",
+    "unit": "шт",
+    "image": "https://media.istockphoto.com/id/2148256422/photo/womans-hand-holding-air-freshener-can-to-remove-unpleasant-odors-of-the-kitchen.webp?a=1&b=1&s=612x612&w=0&k=20&c=NP8-nj35zPb5yI3a8mxmZ3nf2_K11w0Z9Td8VZzoyac="
+  }
+]
