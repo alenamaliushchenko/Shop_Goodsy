@@ -1,9 +1,9 @@
-const wheel = document.getElementById("wheel");
-const spinBtn = document.getElementById("spin");
-const result = document.getElementById("result");
-const openWheelBtn = document.getElementById("openWheelBtn");
-const closeWheelBtn = document.getElementById("closeWheelBtn");
-const modal = document.querySelector(".fortune-modal");
+export function initWheel(root) {
+  // Якщо root передано — шукаємо елементи всередині нього, інакше по всьому документу
+  const scope = root || document;
+  const wheel = scope.querySelector("#wheel");
+  const spinBtn = scope.querySelector("#spin");
+  const result = scope.querySelector("#result");
 
 const prizes = [
   "🎁 Купон на знижку",
@@ -21,7 +21,7 @@ const colors = [
 const numSegments = prizes.length;
 const segmentAngle = 360 / numSegments;
 
-// Конічний градієнт
+// Створення conic-gradient
 let gradient = "conic-gradient(";
 for (let i = 0; i < numSegments; i++) {
   const start = i * segmentAngle;
@@ -29,47 +29,64 @@ for (let i = 0; i < numSegments; i++) {
   gradient += `${colors[i]} ${start}deg ${end}deg${i < numSegments - 1 ? ", " : ""}`;
 }
 gradient += ")";
-wheel.style.background = gradient;
+if (wheel) wheel.style.background = gradient;
 
-// Сегменти
-prizes.forEach((text, i) => {
-  const segment = document.createElement("div");
-  segment.classList.add("segment");
-  segment.style.transform = `rotate(${i * segmentAngle}deg)`;
+// Сегменти з текстом
+if (wheel) {
+  wheel.innerHTML = "";
+  prizes.forEach((text, i) => {
+    const segment = document.createElement("div");
+    segment.classList.add("segment");
+    segment.style.transform = `rotate(${i * segmentAngle}deg)`;
 
-  const span = document.createElement("span");
-  span.innerText = text;
-  span.style.setProperty('--text-angle', `${segmentAngle / 2 + 90}deg`);
-  segment.appendChild(span);
-  wheel.appendChild(segment);
-});
+    const span = document.createElement("span");
+    span.innerText = text;
+    span.style.setProperty('--text-angle', `${segmentAngle / 2 + 90}deg`);
+    segment.appendChild(span);
+    wheel.appendChild(segment);
+  });
+}
 
 let currentRotation = 0;
+let attempts = 0;
+const maxAttempts = 1;
 
-spinBtn.addEventListener("click", () => {
-  spinBtn.style.pointerEvents = "none";
-  result.textContent = "";
+if (spinBtn && wheel && result) {
+  spinBtn.addEventListener("click", () => {
+    if (attempts >= maxAttempts) {
+      result.textContent = "Ви використали всі спроби!";
+      spinBtn.style.pointerEvents = "none";
+      spinBtn.style.opacity = "0.5";
+      return;
+    }
+    spinBtn.style.pointerEvents = "none";
+    result.textContent = "";
 
-  const fullRotations = 5;
-  const winningIndex = Math.floor(Math.random() * numSegments);
-  const stopAngle = 360 - (winningIndex * segmentAngle + segmentAngle / 2);
-  const totalRotation = fullRotations * 360 + stopAngle;
+    const fullRotations = 5;
+    const winningIndex = Math.floor(Math.random() * numSegments);
 
-  wheel.style.transition = "transform 5s cubic-bezier(0.33, 1, 0.68, 1)";
-  wheel.style.transform = `rotate(${totalRotation}deg)`;
+    // Кут, щоб стрілка вказувала на центр виграшного сектора
+    const stopAngle = 360 - (winningIndex * segmentAngle + segmentAngle / 2);
 
-  currentRotation = totalRotation;
+    // Загальне обертання
+    const totalRotation = fullRotations * 360 + stopAngle;
 
-  setTimeout(() => {
-    result.textContent = `Виграш: ${prizes[winningIndex]}`;
-    spinBtn.style.pointerEvents = "auto";
-  }, 5200);
-});
+    wheel.style.transition = "transform 5s cubic-bezier(0.33, 1, 0.68, 1)";
+    wheel.style.transform = `rotate(${totalRotation}deg)`;
 
-// Відкриття / закриття модального вікна
-openWheelBtn.addEventListener("click", () => {
-  modal.classList.remove("hidden");
-});
-closeWheelBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
+    currentRotation = totalRotation;
+    attempts++;
+
+    setTimeout(() => {
+      result.textContent = `Виграш: ${prizes[winningIndex]}`;
+      if (attempts < maxAttempts) {
+        spinBtn.style.pointerEvents = "auto";
+      } else {
+        spinBtn.style.pointerEvents = "none";
+        spinBtn.style.opacity = "0.5";
+        result.textContent += " | Ви використали всі спроби!";
+      }
+    }, 5200);
+  });
+}
+}

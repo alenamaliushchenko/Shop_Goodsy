@@ -1,3 +1,98 @@
+/* --- FORTUNE MODAL CONTENT --- */
+.fortune-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  padding: 32px 18px 24px 18px;
+  text-align: center;
+  min-width: 0;
+  max-width: 98vw;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fortune-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff007a;
+  margin-bottom: 8px;
+}
+.fortune-desc {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 14px;
+}
+.fortune-content .wheel-wrapper {
+  margin: 24px auto 10px auto;
+  width: 100%;
+  max-width: 240px;
+  min-width: 0;
+  height: auto;
+  box-sizing: border-box;
+}
+.fortune-content .result {
+  margin-top: 12px;
+  font-size: 18px;
+  min-height: 24px;
+  background: #fffbe7;
+  border-radius: 8px;
+  padding: 6px 0 2px 0;
+  box-shadow: 0 1px 4px rgba(255, 193, 7, 0.08);
+  width: 100%;
+}
+/* --- END FORTUNE MODAL CONTENT --- */
+/* --- FORTUNE SECTION --- */
+.fortune-section {
+  max-width: 420px;
+  margin: 32px auto 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 28px 18px 32px 18px;
+  text-align: center;
+}
+.fortune-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff007a;
+  margin-bottom: 8px;
+}
+.fortune-desc {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 18px;
+}
+.fortune-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.fortune-spin-btn {
+  margin-top: 10px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  background: linear-gradient(45deg, #ff007a, #ff4d94);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255,0,122,0.08);
+  transition: background 0.2s, opacity 0.2s;
+}
+.fortune-spin-btn:disabled,
+.fortune-spin-btn[disabled],
+.fortune-spin-btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.fortune-spin-btn:hover:not(:disabled) {
+  background: linear-gradient(45deg, #ff4d94, #ff007a);
+}
+/* --- END FORTUNE SECTION --- */
 .menu-container {
     display: flex;
     align-items: center;
@@ -190,8 +285,9 @@
 }
 
 .fortune-entry {
-  text-align: center;
-  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 .fortune-entry button {
   padding: 12px 20px;
@@ -204,6 +300,28 @@
 }
 .fortune-entry button:hover {
   background-color: #217bb7;
+}
+#open-fortune-modal {
+  padding: 12px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#open-fortune-modal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#open-fortune-modal:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Модальне вікно */
@@ -223,17 +341,6 @@
   display: none;
 }
 
-.fortune-content {
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  text-align: center;
-  max-width: 320px;
-  width: 90%;
-  position: relative;
-}
-
-/* Стилі колеса */
 .wheel {
   position: relative;
   width: 250px;
@@ -261,8 +368,6 @@
   font-size: 0.85rem;
   color: #fff;
 }
-
-/* Кнопки */
 #spin {
   padding: 10px 18px;
   font-size: 1rem;
@@ -285,4 +390,128 @@
 }
 .close-btn:hover {
   color: #555;
+}
+.wheel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+.wheel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 5s cubic-bezier(0.33, 1, 0.68, 1);
+    border: 5px solid #ffcc00;
+    box-sizing: border-box;
+}
+.wheel::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    border: 3px solid #ff007a;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.segment {
+    position: absolute;
+    width: 50%; 
+    height: 50%; 
+    top: 0;
+    left: 50%; 
+    transform-origin: 0% 100%; 
+    overflow: hidden; 
+}
+
+.segment span {
+    position: absolute;
+    transform-origin: 0% 50%; 
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-70px) translateX(70px) rotate(var(--text-angle));
+
+    width: 130px; 
+    height: 20px; 
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+
+.center-btn {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #0004ff, #ff4d94);
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(255, 0, 122, 0.7);
+    z-index: 10;
+    border: 3px solid #ffe600;
+    transition: transform 0.1s ease-in-out;
+}
+
+.center-btn:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* .arrow {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid #ff007a;
+    z-index: 10;
+} */
+.arrow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid #ff007a;
+    z-index: 99;
+}
+
+.result {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff007a;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }

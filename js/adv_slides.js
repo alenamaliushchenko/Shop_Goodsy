@@ -1,10 +1,3 @@
-
-// const sliders = [
-//     {src: '../img/Screenshot_1.png', link: 'https://silpo.ua/about/nacionalnyj-keshbek', sectionId: 'slide1'},
-//     {src: '../img/Screenshot_2.png', link: 'https://silpo.ua/sets/znyzhka-do-30-na-prosekko-ta-ihrysti-vyna', sectionId: 'slide2'},
-//     {src: '../img/Screenshot_6.png', link: 'https://silpo.ua/sets/ferma', sectionId: 'slide3'}
-// ];
-
 const sliders = [ 
   {
     src: '../img/Screenshot_1.png',
@@ -24,13 +17,18 @@ const sliders = [
 ];
 
 // ====== Контейнер, який обрізає по ширині
+const advSliderRoot = document.querySelector('.adv-slider-container');
 const sliderContainer = document.createElement('div');
 sliderContainer.style.position = 'relative';
 sliderContainer.style.overflow = 'hidden';
 sliderContainer.style.height = '150px';
 sliderContainer.style.background = '#fff';
 sliderContainer.style.padding = '15px 20px'; // Відступи зліва і справа
-document.body.appendChild(sliderContainer);
+if (advSliderRoot) {
+  advSliderRoot.appendChild(sliderContainer);
+} else {
+  document.body.appendChild(sliderContainer);
+}
 
 // ====== Внутрішній контейнер, який рухає всі слайди
 const track = document.createElement('div');
