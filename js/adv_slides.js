@@ -1,16 +1,16 @@
 const sliders = [ 
   {
-    src: '../img/Screenshot_1.png',
+    src: './img/Screenshot_1.png',
     link: 'https://silpo.ua/about/nacionalnyj-keshbek',
     sectionId: 'slide1'
   },
   {
-    src: '../img/Screenshot_2.png',
+    src: './img/Screenshot_2.png',
     link: 'https://silpo.ua/sets/znyzhka-do-30-na-prosekko-ta-ihrysti-vyna',
     sectionId: 'slide2'
   },
   {
-    src: '../img/Screenshot_6.png',
+    src: './img/Screenshot_6.png',
     link: 'https://silpo.ua/sets/ferma',
     sectionId: 'slide3'
   }
