@@ -1,3 +1,44 @@
+/* --- ФІКСОВАНА КНОПКА КОРЗИНИ --- */
+#floating-cart-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 32px;
+  z-index: 1200;
+  background: linear-gradient(45deg, #ff007a, #ffcc00);
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+#floating-cart-btn:hover {
+  background: linear-gradient(45deg, #ffcc00, #ff007a);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  transform: scale(1.07);
+}
+#floating-cart-btn img {
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  #floating-cart-btn {
+    right: 12px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+  }
+  #floating-cart-btn img {
+    width: 26px;
+    height: 26px;
+  }
+}
+/* --- END ФІКСОВАНА КНОПКА КОРЗИНИ --- */
 /* --- FORTUNE MODAL CONTENT --- */
 .fortune-content {
   background: #fff;
@@ -13,28 +54,22 @@
   flex-direction: column;
   align-items: center;
 }
-.fortune-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ff007a;
-  margin-bottom: 8px;
-}
+
 .fortune-desc {
   color: #444;
   font-size: 1.08rem;
   margin-bottom: 14px;
 }
 .fortune-content .wheel-wrapper {
-  margin: 24px auto 10px auto;
+  margin: auto;
   width: 100%;
-  max-width: 240px;
+  max-width: 300px;
   min-width: 0;
   height: auto;
   box-sizing: border-box;
 }
 .fortune-content .result {
-  margin-top: 12px;
-  font-size: 18px;
+  font-size: 15px;
   min-height: 24px;
   background: #fffbe7;
   border-radius: 8px;
@@ -46,18 +81,25 @@
 /* --- FORTUNE SECTION --- */
 .fortune-section {
   max-width: 420px;
-  margin: 32px auto 0 auto;
+  margin: 8px auto 0 auto;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  padding: 28px 18px 32px 18px;
+  padding: 16px 9px 16px 9px;
   text-align: center;
+}
+
+.fortune-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
 }
 .fortune-title {
   font-size: 2rem;
   font-weight: 700;
   color: #ff007a;
-  margin-bottom: 8px;
+  margin-top: 5px;
 }
 .fortune-desc {
   color: #444;
@@ -107,11 +149,6 @@
     object-fit: contain;
     margin-right: 16px;
 }
-.user-icon {
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-}
 .menu-checkbox {
     display: none;
 }
@@ -128,12 +165,7 @@
     border: none;
     transition: background 0.2s;
     margin-left: auto;
-    margin-right: 20px;
-}
-.logo {
-    width: 100px;
-    max-height: 44px;
-    object-fit: contain;
+    /* margin-right: 20px; */
 }
 .user-icon {
     flex: 1;
@@ -148,19 +180,7 @@
 .menu-checkbox {
     display: none;
 }
-.menu-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 38px;
-    height: 38px;
-    cursor: pointer;
-    z-index: 200;
-    background: none;
-    border: none;
-    transition: background 0.2s;
-}
+
 .menu-icon:hover {
     background: #eaf6fd;
     border-radius: 8px;
@@ -351,15 +371,15 @@
   overflow: hidden;
   transform: rotate(0deg);
 }
-.segment {
+/* .segment {
   position: absolute;
   width: 50%;
   height: 50%;
   top: 50%;
   left: 50%;
   transform-origin: 0% 0%;
-}
-.segment span {
+} */
+/* .segment span {
   position: absolute;
   left: 100%;
   transform: rotate(var(--text-angle));
@@ -367,7 +387,7 @@
   white-space: nowrap;
   font-size: 0.85rem;
   color: #fff;
-}
+} */
 #spin {
   padding: 10px 18px;
   font-size: 1rem;
@@ -381,10 +401,10 @@
   background-color: #27ae60;
 }
 .close-btn {
-  margin-top: 12px;
+  margin-top: 5px;
   background: none;
   color: #999;
-  font-size: 1rem;
+  font-size: 2rem;
   border: none;
   cursor: pointer;
 }
@@ -439,6 +459,8 @@
 
 .segment span {
     position: absolute;
+    display: flex;
+    justify-content: center;
     transform-origin: 0% 50%; 
     left: 0; 
     top: 50%; 
@@ -447,7 +469,7 @@
     width: 130px; 
     height: 20px; 
     color: white;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: bold;
     text-align: left;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -455,6 +477,7 @@
     white-space: nowrap;
     box-sizing: border-box;
 }
+
 
 
 .center-btn {
@@ -481,22 +504,9 @@
 .center-btn:active {
     transform: translate(-50%, -50%) scale(0.95);
 }
-
-/* .arrow {
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 25px solid #ff007a;
-    z-index: 10;
-} */
 .arrow {
     position: absolute;
-    top: -20px;
+    top: -40px;
     left: 50%;
     transform: translateX(-50%) rotate(180deg);
     width: 0;
@@ -507,11 +517,356 @@
     z-index: 99;
 }
 
-.result {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    color: #ff007a;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 600px;
 }
+
+.category-btn {
+  padding: 10px 18px;
+  font-size: 1rem;
+  background: #f0f0f0;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.category-btn:hover {
+  background: #d0ebff;
+  color: #007bff;
+}
+
+.category-btn.active {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card .info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-card .info h3 {
+  font-size: 1.1rem;
+  color: #222;
+  margin: 0;
+}
+
+.product-card .info p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #0072ff;
+}
+
+/* Desktop styles remain unchanged */
+.category-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  flex-wrap: nowrap;
+  margin: 32px auto 24px auto;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #ff007a #f0f0f0;
+  max-width: 100vw;
+}
+
+.category-buttons::-webkit-scrollbar {
+  height: 8px;
+}
+.category-buttons::-webkit-scrollbar-thumb {
+  background: #ff007a;
+  border-radius: 4px;
+}
+.category-buttons::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-width: 120px;
+  background: #fff;
+  border: 1.5px solid #eee;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 12px 10px 8px 10px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s, color 0.2s;
+}
+.category-btn:hover,
+.category-btn.active {
+  background: linear-gradient(45deg, #ff007a 10%, #ffcc00 90%);
+  color: #fff;
+  border: 1.5px solid #ff007a;
+  box-shadow: 0 4px 16px rgba(255,0,122,0.13);
+}
+.category-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+
+.category-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.category-btn.active {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+#cart-container {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#cart-container h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#cart-items li {
+  padding: 8px;
+  border-bottom: 1px dashed #ddd;
+  font-size: 14px;
+}
+
+#cart-total {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+#clear-cart-btn {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#clear-cart-btn:hover {
+  background-color: #e04848;
+}
+
+
+
+/* --- СУЧАСНИЙ МОБІЛЬНИЙ ВАРІАНТ КАТЕГОРІЙ --- */
+.category-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin: 22px auto 22px auto;
+  padding: 0 0 10px 0;
+  max-width: 98vw;
+}
+.category-btn {
+  min-width: 0;
+  width: 100%;
+  font-size: 1.08rem;
+  padding: 14px 16px 14px 12px;
+  border-radius: 18px;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  justify-content: flex-start;
+  background: #fff;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: box-shadow 0.18s, background 0.18s, transform 0.13s;
+  position: relative;
+  overflow: hidden;
+}
+.category-btn:hover, .category-btn.active {
+  background: linear-gradient(90deg, #ffcc00 0%, #ff007a 100%);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(255,0,122,0.13);
+  transform: translateY(-2px) scale(1.02);
+}
+.category-image {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  margin-bottom: 0;
+  margin-right: 10px;
+  box-shadow: 0 2px 10px rgba(255,0,122,0.10);
+  border: 2.5px solid #fffbe7;
+  background: #f3f3f3;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.category-btn span {
+  font-size: 1.08rem;
+  color: #222;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.13);
+}
+
+/* --- Категорії: велика квадратна картинка, назва під картинкою --- */
+.category-btn {
+  min-width: 0;
+  width: 100%;
+  font-size: 1.13rem;
+  padding: 0;
+  border-radius: 22px;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: box-shadow 0.18s, background 0.18s, transform 0.13s, border 0.18s;
+  position: relative;
+  overflow: visible;
+  gap: 8px;
+}
+.category-btn:hover, .category-btn.active {
+  background: none;
+  color: #ff007a;
+  box-shadow: none;
+  border: none;
+  transform: none;
+}
+.category-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  margin: 0 0 8px 0;
+  box-shadow: 0 2px 16px rgba(255,0,122,0.13);
+  border: 2.5px solid #fffbe7;
+  background: #f3f3f3;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+.category-btn span {
+  font-size: 1.13rem;
+  color: #222;
+  font-weight: 700;
+  text-align: center;
+  white-space: normal;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.13);
+  flex: none;
+  display: block;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  height: auto;
+}
+
+/* Декоративний елемент (наприклад, стрілка) */
+.category-btn::after {
+  content: '\203A';
+  color: #ff007a;
+  font-size: 1.5em;
+  margin-left: auto;
+  transition: color 0.2s;
+  opacity: 0.7;
+}
+.category-btn:hover::after, .category-btn.active::after {
+  color: #fff;
+  opacity: 1;
+}
+/* --- КІНЕЦЬ ВАРІАНТУ 2 --- */

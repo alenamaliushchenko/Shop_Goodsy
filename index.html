@@ -59,18 +59,16 @@
     </header>
 
     <main>
-        <!-- <div class="adv-slider-container"></div> -->
-        <!-- <div id="category-container"></div>   -->
-        <!-- <div id="product-container"></div> -->
 
         <div class="fortune-entry">
           <button id="open-fortune-modal">Спробуй фортуну</button>
         </div>
         <div class="fortune-modal hidden" id="fortune-modal">
           <div class="fortune-content">
-            <button class="close-btn" id="close-fortune-modal">×</button>
-            <div class="fortune-title">Колесо фортуни</div>
-            <div class="fortune-desc">Крути колесо та вигравай призи!</div>
+            <div class="fortune-header">
+                <p class="fortune-title">Крути та вигравай!</p>
+                <button class="close-btn" id="close-fortune-modal">×</button>
+            </div>
             <div class="wheel-wrapper">
               <div class="wheel" id="wheel"></div>
               <div class="center-btn" id="spin">GO</div>
@@ -79,10 +77,19 @@
             <div id="result" class="result"></div>
           </div>
         </div>
+
+        <div id="adv-slides"></div> <!-- слайдер -->
+        <div id="category-section"></div> <!-- тут будуть кнопки категорій -->
+        <div id="product-container"></div> <!-- тут будуть картки товарів -->
+
+        <!-- Фіксована іконка корзини -->
+        <!-- <button id="floating-cart-btn" aria-label="Відкрити кошик">
+          <img src="img/cart.svg" alt="cart" style="width:32px;height:32px;">
+        </button> -->
     </main>
 
     
     <script type="module" src="./js/main.js"></script>
-    <script src="./js/mobile-menu.js"></script>
+    
 </body>
 </html>
