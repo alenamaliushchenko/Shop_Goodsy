@@ -1,28 +1,52 @@
-// Локальна змінна кошика та знижки
 let cart = [];
 let discount = 0;
 
-// Ініціалізуємо виведення кошика
+
 export function setupCart() {
   let container = document.getElementById('cart-container');
+
   if (!container) {
     container = document.createElement('div');
     container.id = 'cart-container';
     container.style.display = 'none'; // Початково приховано
+
     container.innerHTML = `
       <h2>🧺 Кошик</h2>
       <ul id="cart-items"></ul>
       <p id="cart-total">Загальна сума: 0 грн</p>
-      <button id="clear-cart-btn">Очистити кошик</button>
+      <div class="cart-buttons">
+        <button id="clear-cart-btn">Очистити кошик</button>
+        <button id="continue-shopping-btn">Продовжити покупки</button>
+      </div>  
     `;
+
     document.body.appendChild(container);
+
+    // Створюємо одну фіксовану кнопку-корзинку в нижньому правому куті
+    const iconBtn = document.createElement('button');
+    iconBtn.classList.add('cart-icon-btn');
+    iconBtn.innerHTML = '🛒';
+    iconBtn.title = 'Показати кошик';
+
+    iconBtn.addEventListener('click', () => {
+      const isVisible = container.style.display === 'flex';
+      showCart(!isVisible);
+    });
+
+    document.body.appendChild(iconBtn);
   }
+
   document.getElementById('clear-cart-btn').addEventListener('click', () => {
     cart = [];
     discount = 0;
     updateCartUI();
   });
+
+  document.getElementById('continue-shopping-btn').addEventListener('click', () => {
+    showCart(false); // Приховати кошик
+  });
 }
+
 
 // Додає товар до кошика
 export function addToCart(product) {

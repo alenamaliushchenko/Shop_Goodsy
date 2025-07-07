@@ -34,7 +34,7 @@ export function renderCategories(categories, products, renderProductsCallback) {
     btn.addEventListener('click', () => {
       const filtered = products.filter(p => p.category === category);
       renderProductsCallback(filtered);
-      showCart(true);
+    //   showCart(true);
 
       container.querySelectorAll('button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
